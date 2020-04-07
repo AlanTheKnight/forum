@@ -1,34 +1,59 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static 'anonymous.png' %}" width="30" height="30" alt=""> NNF</a>
-            
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-    <div class="container my-5">
-        <h1>Welcome to forum!</h1>
+{% block title %}
+IdeaSoft
+{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="jumbotron text-center">
+        <h1>Welcome to IdeaSoft!</h1>
+        <hr style="margin-left: 20%; margin-right: 20%;">
+        <p class="lead">
+            We are a group of teenage developers who loves making websites & software.
+        </p>
+        <a href="#" class="btn btn-success">Learn more</a>
     </div>
-</body>
-</html>
+    <div class="row">
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card text-center">
+                <a href="#"><img src="{% static 'news.png' %}" class="card-img-top" alt=""></a>
+                <div class="card-body">
+                    <h3 class="card-title">Latest news</h3>
+                    <p class="text-muted">Information about our projects</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card text-center">
+                <a href="#"><img src="{% static 'our_team.png' %}" class="card-img-top" alt=""></a>
+                <div class="card-body">
+                    <h3 class="card-title">Our team</h3>
+                    <p class="text-muted">IdeaSoft studio participants</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card text-center">
+                <a href="#"><img src="{% static 'join.png' %}" class="card-img-top" alt=""></a>
+                <div class="card-body">
+                    <h3 class="card-title">Join us</h3>
+                    <p class="text-muted">Become a member of IdeaSoft</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card text-center">
+                <a href="#"><img src="{% static 'contacts.png' %}" class="card-img-top" alt=""></a>
+                <div class="card-body">
+                    <h3 class="card-title">Contacts</h3>
+                    <p class="text-muted">Keep in touch with us</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
