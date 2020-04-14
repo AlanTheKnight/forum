@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Join Us
+{% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6 my-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Requirements for candidates</h2>
+                    <hr>
+                    <h4>Needed skills</h4>
+                    <ul>
+                        <li>Python, CSS, HTML, JavaScript</li>
+                        <li>Django</li>
+                        <li>Linux</li>
+                        <li>Basic algorithms and data structures</li>
+                        <li>Working with DataBases (SQL)</li>
+                    </ul>
+                    <h4>We like people who</h4>
+                    <ul>
+                        <li>Enjoy working in team and help others</li>
+                        <li>Can learn something new quickly</li>
+                        <li>Ready to take part in different projects and competitions</li>
+                    </ul>
+                    <p>Fill in the form, submit and we are going to reply soon and plan our future work.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card my-3">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            {{ form.surname }}
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            {{ form.age }}
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            {{ form.phone }}
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Skills and postive things about yourself</label>
+                            {{ form.description }}
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<script>
+    function validatePhone(){
+        let inp = $("#phone");
+        if (inp.val().match(/(\+7|8)[0-9]{10}/i)) {
+            inp.removeClass("is-invalid");
+            inp.addClass("is-valid");
+        } else {
+            inp.removeClass("is-valid");
+            inp.addClass("is-invalid");
+        }
+    }
+
+    function validateEmail(){
+        let inp = $("#email");
+        if (inp.val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+            inp.removeClass("is-invalid");
+            inp.addClass("is-valid");
+        } else {
+            inp.removeClass("is-valid");
+            inp.addClass("is-invalid");
+        }
+    }
+</script>
+
+{% endblock %}

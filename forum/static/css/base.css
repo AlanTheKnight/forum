@@ -3,3 +3,27 @@
 * {
     font-family: 'Pacifico', cursive !important;
 }
+
+
+.card{
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100%;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+    }        
+    }
+
+
+@media (min-width: 768px) {
+    .card-50 {width: 75%;}        
+    }
+
+
+@media (min-width: 992px) {
+    .card-50 {width: 50%;}        
+    }
